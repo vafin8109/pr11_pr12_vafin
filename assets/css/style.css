@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu__elem {
+  position: relative;
+  margin-left: 20px;
+}
+
+.menu__btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.submenu__wrapper {
+  padding: 10px;
+}
+
+.submenu__elem {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.menu__elem:hover .submenu {
+  display: block;
+}
+
+.submenu__elem:hover {
+  color: #ccc;
+}
+
+.faq {
+  padding: 40px;
+}
+
+.faq__item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.faq__item h3 {
+  margin-top: 0;
+}
+
+.faq__item p {
+  margin-bottom: 0;
+}
+
+.faq__item h3 {
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq__item h3:hover {
+  color: #ffcc00;
+}
+
+.faq__item h3::after {
+  content: "▼";
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.faq__item.active h3::after {
+  transform: rotate(180deg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq__item p {
+  display: none;
+  margin: 5px 0;
+  color: #555;
+}
+
+.faq__item.active p {
+  display: block;
+  animation: fadeIn 0.3s;
+}
